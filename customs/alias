@@ -1,0 +1,67 @@
+#!/bin/bash
+
+alias grep='grep --colour=auto'
+alias q='exit'
+alias cl='clear && l'
+alias c='clear'
+alias l='ls -CF'
+alias ll='ls -lA'
+alias r='reboot'
+alias gpm='git pull origin master'
+alias gpl='git pull'
+alias gpo='git push origin'
+alias gm='git commit -m'
+alias gs='git status'
+alias gst='git stash'
+alias gc='git checkout'
+alias gb='git branch -a'
+alias gl="git log --graph --pretty=format:\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --stat"
+alias gf='git fetch -p'
+alias gfpm='git fetch -p && git pull origin master'
+alias gds='git diff --stat'
+alias gdm='git diff origin/master'
+alias gdms='git diff origin/master --stat'
+alias grhm='git reset --hard origin/master'
+alias gdoc='git diff origin/$(git_current_branch)'
+alias ga='git add .'
+alias gdst='git diff --stat'
+alias grh='git reset --hard'
+alias clearl='clear && l'
+alias dev="ssh ailab@192.168.3.18"
+alias yoserver="ssh yondonjamts@192.168.20.32"
+alias fan1="i8kctl fan 1 1"
+alias fan2="i8kctl fan 2 2"
+alias sens="sensors"
+alias yt-audio="youtube-dl -f 140"
+alias spring="java -jar -Dspring.profiles.active=local "
+alias open="xdg-open"
+alias envon="mv -v ../.env.local ."
+alias envoff="mv -v .env.local ../"
+alias nsd="npm run start:dev"
+alias nis="npm install --save"
+alias nid="npm install --save-dev"
+alias naf="npm audit fix"
+alias nupdate="sudo npm install -g npm"
+alias serve="npm run serve"
+alias sai="sudo apt install"
+alias mvnci="mvn clean install"
+alias spring='java -jar -Dspring.profiles.active=local'
+alias mocp='mocp -T 30equals'
+alias ipa='ip -s -c -h a'
+alias ipas='ip -s -c -h a | grep -v "inet6" | grep "inet" '
+alias pg='ping google.com'
+alias p18='ping 192.168.3.18'
+# alias cat='ccat'
+alias less='cless'
+alias mb='git for-each-ref --format="%(authorname) %09 %(refname)" | grep origin | grep yondonjamts'
+alias x='startx'
+alias vi='vim'
+alias ipset='sudo ip link set'
+alias update='yay -Syu && sudo pacman -Syu'
+alias npmu='npm uninstall'
+alias last='last | tac'
+alias fixchro='pacman -U /var/cache/pacman/pkg/chromium-84.0.4147.105-1-x86_64.pkg.tar.zst'
+alias dont='git checkout .'
+alias a='npm run dev'
+alias mkvenv='python -m venv venv'
+alias dnson='cp /etc/resolv.conf.bak /etc/resolv.conf'

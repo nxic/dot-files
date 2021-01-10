@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+#sudo ip link set enp0s20f0u5u4 up
+sudo ip link set enp0s20f0u2 up
+sudo dhcpcd

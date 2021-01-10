@@ -1,0 +1,4 @@
+xterm*visualBell: false
+xterm*metaSendsEscape: true
+
+xlock.mode: blank

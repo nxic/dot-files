@@ -1,0 +1,35 @@
+#!/bin/bash
+
+source $HOME/.config/bspwm/panel/config
+
+batStatus=$(acpi --battery | awk 'NR==1{gsub(/,/, ""); print $3}')
+batLevel=$(acpi --battery | awk 'NR==1{gsub(/[,%]/, ""); print $4}')
+
+output=""
+
+if [[ -z $batStatus ]]; then
+    output="${GRAY} \uf1e6"
+
+elif [[ $batStatus == Charging ]]; then
+    output="${GREEN} \uf0e7 $batLevel% "
+
+elif [[ $batStatus == Discharging ]]; then
+    if [[ $batLevel -gt 80 ]]; then
+        output="${GREEN} \uf240"
+    elif [[ $batLevel -gt 60 ]]; then
+        output="${GREEN} \uf241"
+    elif [[ $batLevel -gt 40 ]]; then
+        output="${GREEN} \uf242"
+    elif [[ $batLevel -gt 20 ]]; then
+        output="${GREEN} \uf243"
+    else
+        output="${RED} \uf244"
+        COLOUR_BACKGROUND='#FFFFFFFF'
+    fi
+    output="$output $batLevel%"
+
+elif [[ $batStatus == Full ]]; then
+    output="${GREEN} \uf240 $batLevel%"
+fi
+
+echo -e "$output${LIGHT_BLUE}"

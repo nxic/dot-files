@@ -1,0 +1,4 @@
+#!/bin/bash
+
+import -window root "/home/yondonjamts/Pictures/screenshot-$(date).png"
+

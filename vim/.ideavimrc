@@ -1,0 +1,34 @@
+"" Abbr
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
+"" ezFold
+nmap <Space> za
+
+"" ez indent
+nmap > >>
+nmap < <<
+
+"" pageUp pageDown mapping
+nnoremap <A-j> 10j
+nnoremap <A-k> 10k
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set clipboard+=ideaput
+
+set visualbell
+set noerrorbells
+
+so ~/.vimrc

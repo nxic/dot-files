@@ -1,0 +1,13 @@
+[user]
+	email = yondonjamts@outlook.com
+	name = Yondonjamts Ganzorig
+[credential]
+[credential]
+	helper = store
+[blame]
+	date = relative
+[alias]
+    today = log --since=midnight --author='yondonjamts' --oneline --stat
+    asdf = diff origin/master
+[pull]
+	rebase = false

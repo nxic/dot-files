@@ -1,0 +1,9 @@
+#!/bin/bash
+
+password=$2
+username=$1
+
+data=$(curl -X POST "http://192.168.3.18:10008/public/authenticate" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{  \"deviceId\": \"string\",  \"password\": \"${password:=123}\",  \"username\": \"${username:=123}\"}")
+
+parsed=$(echo $data | jq -r .keycloakResponse.access_token)
+echo "Bearer ${parsed}" | xclip

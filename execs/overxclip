@@ -1,0 +1,4 @@
+#!/bin/bash
+
+fuck=$(xclip -o)
+echo "start $fuck end"

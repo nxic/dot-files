@@ -1,0 +1,63 @@
+xterm*faceName: DejaVu Sans Mono:style=Regular
+
+URxvt.font:                 xft:Literation Mono Powerline:size=10:antialias=true:hinting=true,\
+                            xft:Noto Mono:size=10:antialias=true:hinting=true,\
+                            xft:Noto Color Emoji,\
+                            xft:Unifont,\
+                            9x15
+
+
+xterm*renderFont: True
+xterm*faceSize: 9
+xterm*boldFont: *-mono-*-*-*-12-*
+xterm*antialias: true
+XTerm*visualBell:false
+Xft.antialias: true
+!
+! Scrollbar
+xterm*rightScrollBar: true
+xterm*ScrollBar: false
+
+! bg
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
+Xft*antialias: true
+
+! URxvt*font: xft:Monaco:medium:size=8, xft:FontAwesome, xft:Dejavu, xft:SourceHanSansJP
+! URxvt*font: xft:Dejavu
+URxvt*letterSpace: 0
+URxvt.perl-ext-common: font-size,keyboard-select
+URxvt.keysym.C-S-Up:   font-size:increase
+URxvt.keysym.C-S-Down: font-size:decrease
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Select configs
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+URxvt.metaSendsEscape: true
+
+! Color schemes
+*.foreground: #F8F8F2
+*.background: #262626
+
+*.color0:     #000000
+*.color1:     #FF5555
+*.color2:     #50FA7B
+*.color3:     #F1FA8C
+*.color4:     #BD93F9
+*.color5:     #FF79C6
+*.color6:     #8BE9FD
+*.color8:     #4D4D4D
+*.color9:     #FF6E67
+*.color10:    #5AF78E
+*.color11:    #FFFFFF
+*.color12:    #CAA9FA
+*.color13:    #E66767
+*.color14:    #9AEDFE
+*.color15:    #E6E6E6
+
+! ETC
+XTerm*termName: xterm-color
