@@ -1,0 +1,4 @@
+#!/bin/bash
+
+app=$1
+cat $(which ${app})
