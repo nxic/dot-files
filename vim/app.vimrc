@@ -44,6 +44,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim' " or other package manager
+
+
 autocmd FileType haskell setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType hs setlocal tabstop=2 shiftwidth=2 expandtab
 
@@ -200,9 +204,18 @@ set number
 
 let no_buffers_menu=1
 
-silent! colorscheme gruvbox
+
+"*****************************************************************************
+"" Colorschemes
+"*****************************************************************************
+silent! colorscheme palenight
 set background=dark
 set term=xterm-256color
+
+set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
 
 set mousemodel=popup
 set t_Co=256
@@ -616,3 +629,4 @@ endif
 so $HOME/.vim/keymap.vimrc
 
 " so $HOME/.vim/dvorak.vimrc
+"
