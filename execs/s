@@ -1,0 +1,4 @@
+#!/bin/bash
+
+flameshot screen -r -p ~/Pictures
+
