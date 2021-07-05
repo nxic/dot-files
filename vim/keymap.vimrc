@@ -37,6 +37,10 @@ nmap <M-F12> :sh<CR>
 "" windowed terminal
 nmap <M-F11> :ter<CR>
 
+"" windowed terminal
+nmap <M-F11> :UnMinify<CR>
+
+
 "" Git blame toggle keybind
 function! s:BlameToggle() abort
   let found = 0
@@ -105,7 +109,7 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 
-noremap ; :
+" noremap ; :
 
 "" COC keymaps
 

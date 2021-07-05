@@ -1,0 +1,28 @@
+#!/bin/python3
+
+import getpass
+import logging
+import requests
+users = {
+    'Bg': 63185029158949,
+    'Sg': 63384022389578,
+}
+data = requests.post('https://service.invescore.mn/auth/public/authenticate', json={
+    'username': '95283870',
+#    'password': getpass.getpass('Password: '),
+    'password': 'd69mar7WnMNS',
+    'deviceId': 'QP1A.190711.020'
+}).json()
+access_token = data['keycloakResponse']['access_token']
+headers = {
+    'Authorization': f'Bearer {access_token}',
+}
+data = requests.get('https://service.invescore.mn/customers/my-customer', headers=headers).json()
+customer_id = data['id']
+for i in range(10):
+    data = requests.post('https://service.invescore.mn/pocket/wallet/my-transfer/transfer', headers=headers, json={
+        'amount': 500,
+        'info': 'to Sg ' + str(i+1),
+        'receiverCustomerId': users['Sg'],
+        'senderCustomerId': customer_id,
+    })

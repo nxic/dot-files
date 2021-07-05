@@ -1,4 +1,9 @@
+#!/bin/zsh
+
+xset r rate 190 50
+
 sxhkd &
+flameshot &
 
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do

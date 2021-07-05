@@ -34,18 +34,19 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
-Plug 'vim-scripts/CSApprox'
-Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
+Plug 'jparise/vim-graphql'
+" Plug 'vim-scripts/CSApprox'
+" Plug 'Raimondi/delimitMate'
+" Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
-Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
-Plug 'sheerun/vim-polyglot'
+" Plug 'Yggdroot/indentLine'
+" Plug 'avelino/vim-bootstrap-updater'
+" Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ayu-theme/ayu-vim' " or other package manager
+" Plug 'ayu-theme/ayu-vim' " or other package manager
 
 
 autocmd FileType haskell setlocal tabstop=2 shiftwidth=2 expandtab
@@ -64,8 +65,8 @@ endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 "" Vim-Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-session'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
@@ -82,8 +83,8 @@ Plug 'morhetz/gruvbox'
 " html
 "" HTML Bundle
 Plug 'hail2u/vim-css3-syntax'
-Plug 'gorodinskiy/vim-coloresque'
-Plug 'tpope/vim-haml'
+" Plug 'gorodinskiy/vim-coloresque'
+" Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
 
@@ -126,13 +127,14 @@ call vundle#rc()
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
-Plugin 'eslint/eslint'
-Plugin 'godlygeek/tabular'
+" Plugin 'eslint/eslint'
+" Plugin 'godlygeek/tabular'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 "" FOR SCSS
-Plugin 'https://github.com/shmargum/vim-sass-colors.git'
+" Plugin 'https://github.com/shmargum/vim-sass-colors.git'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 "" Include user's extra bundle
 if filereadable(expand("~/.vimrc.local.bundles"))
@@ -174,6 +176,7 @@ set noswapfile
 set nobackup
 
 set fileformats=unix,dos,mac
+set nolist wrap linebreak breakat&vim
 
 if exists('$SHELL')
     set shell=$SHELL
@@ -395,6 +398,17 @@ if !exists('*s:setupWrapping')
     set textwidth=79
   endfunction
 endif
+
+" Simple re-format for minified Javascript
+command! UnMinify call UnMinify()
+function! UnMinify()
+    %s/{\ze[^\r\n]/{\r/g
+    %s/){/) {/g
+    %s/};\?\ze[^\r\n]/\0\r/g
+    %s/;\ze[^\r\n]/;\r/g
+    %s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /g
+    normal ggVG=
+endfunction
 
 
 "*****************************************************************************
@@ -630,3 +644,4 @@ so $HOME/.vim/keymap.vimrc
 
 " so $HOME/.vim/dvorak.vimrc
 "
+

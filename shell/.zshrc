@@ -9,6 +9,8 @@ export PATH="$PATH:/home/yondonjamts/.local/bin"
 export PANEL_FIFO="/tmp/yondonjamts/panel-info"
 export LANG=en_US.UTF-8
 
+eval "$(starship init zsh)"
+
 # ZSH_THEME="kelan"
 # ZSH_THEME="kolo"
 ZSH_THEME="ibra"
@@ -21,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 xrdb -l ~/.Xresources
 
 # keyboard refresh rate
-xset r rate 200 50
+xset r rate 190 50
 
 set bell-style none
 
@@ -46,3 +48,9 @@ source /home/yondonjamts/.yondonjamts/alias
 # set -o vi
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
+export CI_SERVER_URL=https://gitlab.com
+export AILAB_GROUP_ID=3707208
+export AILAB_PROFILE=local
+
+

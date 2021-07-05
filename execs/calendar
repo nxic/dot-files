@@ -1,0 +1,11 @@
+#!/bin/bash
+
+month=$1
+useryear=$2
+year=$(date +%Y)
+if [[ ! -z $useryear ]]
+then
+	cal -m $month $useryear
+else
+	cal -m $month $year
+fi

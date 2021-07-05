@@ -134,7 +134,6 @@ vlc
 wavpack
 wget
 which
-wine
 wireless_tools
 wpa_supplicant
 xbindkeys

@@ -8,6 +8,9 @@
 	date = relative
 [alias]
     today = log --since=midnight --author='yondonjamts' --oneline --stat
+    me = log --author='yondonjamts' --oneline --stat --pretty
     asdf = diff origin/master
 [pull]
 	rebase = false
+[core]
+	editor = vim

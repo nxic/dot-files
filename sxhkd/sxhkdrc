@@ -111,6 +111,7 @@ super + ctrl + {h,j,k,l}
 super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
+
 # cancel the preselection for the focused node
 super + ctrl + space
 	bspc node -p cancel
@@ -137,7 +138,7 @@ super + {Left,Down,Up,Right}
 
 # Backlight
 XF86MonBrightness{Up,Down}
-  sudo changeBright { ,-}10000
+  sudo changeBright { ,-}5000
 
 # Audio
 XF86AudioMute

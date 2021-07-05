@@ -1,3 +1,4 @@
+
 ;================================================================
 ;
 ;
@@ -55,9 +56,10 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=11;1
 font-3 = FontAwesome:pixelsize=11;1
 font-4 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
 
-modules-left = bspwm cpu memory
+; modules-left = bspwm cpu memory
+modules-left = bspwm memory
 modules-center = date
-modules-right = pulseaudio xkeyboard wlan eth battery-1 battery-2 temperature powermenu
+modules-right = pulseaudio xkeyboard battery-2 temperature
 
 tray-position = right
 tray-padding = 2
@@ -199,13 +201,14 @@ format-disconnected =
 type = internal/date
 interval = 1
 
-date = " %Y-%m-%d"
+; date = "%Y-%m-%d"
+date = "[%m%d]"
 date-alt = 
 
-time = %H:%M:%S
-time-alt = %H:%M
+time = [%H%M]
+time-alt = [%H%M]
 
-format-prefix = 
+; format-prefix = 
 format-foreground = ${colors.white}
 format-underline = ${colors.light-blue}
 
@@ -220,7 +223,7 @@ interval = 5
 format-volume = <ramp-volume> <label-volume>
 format-volume-underline = #B48EAD
 
-label-muted =  muted
+label-muted = muted
 label-muted-foreground = ${colors.red}
 label-muted-underline = ${colors.red}
 
@@ -333,7 +336,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = _ 
+label-open =  
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
@@ -367,4 +370,4 @@ screenchange-reload = true
 margin-top = 0
 margin-bottom = 0
 
-; vim:ft=dosini
+;vim:ft=dosini
