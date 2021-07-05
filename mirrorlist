@@ -1,0 +1,35 @@
+## South Africa
+Server = http://mirrors.urbanwave.co.za/archlinux/$repo/os/$arch
+## Worldwide
+Server = http://mirror.rackspace.com/archlinux/$repo/os/$arch
+
+
+#
+## United States
+Server = http://dfw.mirror.rackspace.com/archlinux/$repo/os/$arch
+## United States
+Server = http://il.us.mirror.archlinux-br.org/$repo/os/$arch
+## United States
+Server = http://arch.mirror.constant.com/$repo/os/$arch
+## China
+Server = http://mirror.lzu.edu.cn/archlinux/$repo/os/$arch
+## United States
+Server = http://mirrors.gigenet.com/archlinux/$repo/os/$arch
+## South Korea
+Server = http://ftp.harukasan.org/archlinux/$repo/os/$arch
+## United States
+Server = http://distro.ibiblio.org/archlinux/$repo/os/$arch
+## United States
+Server = http://mirror.wdc1.us.leaseweb.net/archlinux/$repo/os/$arch
+## Canada
+Server = http://mirror.its.dal.ca/archlinux/$repo/os/$arch
+## United States
+Server = http://mirrors.ocf.berkeley.edu/archlinux/$repo/os/$arch
+## China
+Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+## United States
+Server = http://plug-mirror.rcac.purdue.edu/archlinux/$repo/os/$arch
+## United States
+Server = http://mirrors.sonic.net/archlinux/$repo/os/$arch
+## Japan
+Server = http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch
