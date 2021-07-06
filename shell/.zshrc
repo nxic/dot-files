@@ -9,8 +9,6 @@ export PATH="$PATH:/home/yondonjamts/.local/bin"
 export PANEL_FIFO="/tmp/yondonjamts/panel-info"
 export LANG=en_US.UTF-8
 
-eval "$(starship init zsh)"
-
 # ZSH_THEME="kelan"
 # ZSH_THEME="kolo"
 ZSH_THEME="ibra"

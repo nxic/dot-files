@@ -27,7 +27,7 @@ secondary = #e60053
 alert = ${colors.red}
 
 [bar/default]
-monitor = ${env:MONITOR:DP-3}
+monitor = ${env:MONITOR:DP-2}
 width = 100%
 height = 21
 offset-x = 0

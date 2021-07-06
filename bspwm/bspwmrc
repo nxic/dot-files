@@ -13,8 +13,8 @@ bspc config remove_disabled_monitors true
 # bspc monitor -d I II III IV V VI VII VIII IX X
 # bspc monitor eDP-1 -d $ws1 $ws2 $ws3 $ws4 $ws5
 # bspc monitor HDMI-1 -d 6 7 8 9 0
-bspc monitor eDP-1 -d WEB IDE VIM TTY0 TTY1
-bspc monitor DP-3 -d 1 2 3 4 5
+bspc monitor DP-2 -d WEB IDE VIM TTY0 TTY1
+bspc monitor DP-1 -d 1 2 3 4 5
 
 bspc wm eDP-1 DP-1
 
@@ -39,4 +39,4 @@ bspc rule -a Screenkey manage=off
 # feh --bg-fill ~/.yondonjamts/bruno-aguirre.jpg
 # feh --bg-fill ~/.yondonjamts/yawn.jpg
 # feh --bg-fill ~/.yondonjamts/city.png
-feh --bg-fill ~/.yondonjamts/mountain.jpg
+feh --bg-fill ~/.yondonjamts/uul.jpg

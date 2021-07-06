@@ -10,9 +10,9 @@ if type "xrandr"; then
     MONITOR=$m polybar --reload default &
   done
 else
-  MONITOR=eDP-1 polybar --reload default &
+  MONITOR=DP-1 polybar --reload default &
 fi
 
-xrandr --auto --output eDP-1 --below DP-3 &
+xrandr --auto --output DP-1 --below DP-2 &
 xrdb -l /home/yondonjamts/.Xresources
 exec bspwm
