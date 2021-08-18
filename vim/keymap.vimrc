@@ -38,7 +38,7 @@ nmap <M-F12> :sh<CR>
 nmap <M-F11> :ter<CR>
 
 "" windowed terminal
-nmap <M-F11> :UnMinify<CR>
+" nmap <M-F11> :UnMinify<CR>
 
 
 "" Git blame toggle keybind

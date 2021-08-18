@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-xset r rate 190 50
-
 sxhkd &
 flameshot &
 
@@ -13,6 +11,7 @@ else
   MONITOR=DP-1 polybar --reload default &
 fi
 
-xrandr --auto --output DP-1 --below DP-2 &
+xrandr --auto --output DP-1 --left DP-2 &
 xrdb -l /home/yondonjamts/.Xresources
+xset r rate 190 50
 exec bspwm

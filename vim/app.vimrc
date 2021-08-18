@@ -116,6 +116,9 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
 
+" Asterisk
+Plug 'ipoddubny/asterisk-vim'
+
 "*****************************************************************************
 "" VUNDLE
 "*****************************************************************************
@@ -642,5 +645,3 @@ endif
 so $HOME/.vim/keymap.vimrc
 
 " so $HOME/.vim/dvorak.vimrc
-"
-

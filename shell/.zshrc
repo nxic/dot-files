@@ -2,7 +2,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export ZSH="/home/yondonjamts/.oh-my-zsh"
 export NODE_PATH=/usr/local/lib/node_modules
 
-export PATH="$PATH:/home/yondonjamts/.gem/ruby/2.7.0/bin"
+export PATH="$PATH:/home/yondonjamts/.local/share/gem/ruby/3.0.0/bin"
+# export PATH="$PATH:/home/yondonjamts/.gem/ruby/2.7.0/bin"
 export PATH="$PATH:/opt/apache-maven-3.6.3/bin"
 export PATH="$PATH:/home/yondonjamts/.bspwm/panel"
 export PATH="$PATH:/home/yondonjamts/.local/bin"
@@ -14,7 +15,7 @@ export LANG=en_US.UTF-8
 ZSH_THEME="ibra"
 ENABLE_CORRECTION="true"
 ZSH_COLORIZE_TOOL=pygmentize
-plugins=(git cp colorize battery grc)
+plugins=(git cp colorize battery grc fzf)
 source $ZSH/oh-my-zsh.sh
 
 # uxterm
@@ -31,7 +32,7 @@ set bell-style none
 TERM=xterm-256color
 
 # nodejs
-VERSION=v12.17.0
+VERSION=v14.17.3
 DISTRO=linux-x64
 export PATH="$PATH:/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:PATH"
 

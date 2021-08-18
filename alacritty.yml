@@ -1,0 +1,97 @@
+window:
+  title: Terminal
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+font:
+  size: 9.0
+  normal:
+    family: DejaVu Sans Mono
+    style: Regular
+
+draw_bold_text_with_bright_colors: true
+
+scrolling:
+  history: 10000
+
+colors:
+  # Default colors
+  primary:
+    background: '#282A36'
+    foreground: '#FFFFFF'
+
+  # Normal colors
+  normal:
+    black:   '#282A36'
+    red:     '#FF5555'
+    green:   '#50FA7B'
+    yellow:  '#F1FA8C'
+    blue:    '#BD93F9'
+    magenta: '#FF79C6'
+    cyan:    '#8BE9FD'
+    white:   '#E5E5E5'
+
+  # Bright colors
+  bright:
+    black:   '#4D4D4D'
+    red:     '#FF6E67'
+    green:   '#5AF78E'
+    yellow:  '#FFFFFF'
+    blue:    '#CAA9FA'
+    magenta: '#E66767'
+    cyan:    '#9AEDFE'
+    white:   '#E6E6E6'
+
+# colors:
+#   selection:
+#     text:       '#FAFAFA'
+#     background: '#252834'
+
+#   primary:
+#     background: '#313440'
+#     foreground: '#FAFAFA'
+
+#   normal:
+#     black:   '#282C34'
+#     red:     '#FF6059'
+#     green:   '#5FFF87'
+#     yellow:  '#FFFF87'
+#     blue:    '#5FAFFF'
+#     magenta: '#AF87FF'
+#     cyan:    '#5FAFFF'
+#     white:   '#FAFAFA'
+
+#   bright:
+#     black:   '#282C34'
+#     red:     '#FF6059'
+#     green:   '#5FFF87'
+#     yellow:  '#FFFF87'
+#     blue:    '#5FAFFF'
+#     magenta: '#AF87FF'
+#     cyan:    '#5FAFFF'
+#     white:   '#FAFAFA'
+
+background_opacity: 0.96
+
+key_bindings:
+  - { key: Return, mods: Alt,           action: SpawnNewInstance }
+  - { key: Up,     mods: Control|Shift, action: IncreaseFontSize }
+  - { key: Down,   mods: Control|Shift, action: DecreaseFontSize }
+  - { key: T,      mods: Control|Shift, action: ScrollLineUp }
+  - { key: H,      mods: Control|Shift, action: ScrollLineDown }
+
+  - { key: J,      mods: Alt,           chars: "\x1bê" }
+  - { key: K,      mods: Alt,           chars: "\x1bë" }
+  - { key: L,      mods: Alt,           chars: "\x1bì" }
+  - { key: H,      mods: Alt,           chars: "\x1bè" }
+
+  - { key: Key1,      mods: Alt,           chars: "\x1b±" }
+  - { key: Key3,      mods: Alt,           chars: "\x1b³" }
+  - { key: Key4,      mods: Alt,           chars: "\x1b´" }
+  - { key: Key5,      mods: Alt,           chars: "\x1bµ" }
+
+  - { key: F11,      mods: Alt,           chars: "\x1b[23;3~" }
+  - { key: F12,      mods: Alt,           chars: "\x1b[24;3~" }
+  - { key: A,      mods: Alt,           chars: "\x1bá" }
+  - { key: Q,      mods: Alt,           chars: "\x1bñ" }

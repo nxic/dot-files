@@ -1,0 +1,99 @@
+#!/bin/bash
+
+alias grep='grep --colour=auto'
+alias q='exit'
+alias cl='clear && l'
+alias c='clear'
+# alias ls='ls -v -h --color=tty'
+# alias l='ls -CFh'
+# alias ll='ls -lAh'
+# alias lls='ls -Slhr'
+alias r='reboot'
+alias gpm='git pull origin master'
+alias gpl='git pull'
+alias gpo='git push origin'
+alias gmt='git commit'
+alias gm='git commit -m'
+alias gs='git status'
+alias gst='git stash'
+alias gc='git checkout'
+alias gb='git branch -a'
+alias gt='git tag'
+alias gtl='git tag -l --sort=v:refname' 
+alias gl="git log --graph --pretty=format:\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --stat"
+alias gf='git fetch -p'
+alias gfpm='git fetch -p && git pull origin master'
+alias gds='git diff --stat'
+alias gdm='git diff origin/master'
+alias gdst='git diff --staged'
+alias gdms='git diff origin/master --stat'
+alias grhm='git reset --hard origin/master'
+alias gdoc='git diff origin/$(git_current_branch)'
+alias gsta='git stash apply'
+alias ga='git add .'
+alias grh='git reset --hard'
+alias clearl='clear && l'
+alias dev="ssh ailab@192.168.3.18"
+alias yoserver="ssh yondonjamts@192.168.20.32"
+alias fan1="i8kctl fan 1 1"
+alias fan2="i8kctl fan 2 2"
+alias sens="sensors"
+alias yt-audio="youtube-dl -f 140"
+alias open="xdg-open"
+alias envon="mv -v ../.env.local ."
+alias envoff="mv -v .env.local ../"
+alias nsd="npm run start:dev"
+alias nis="npm install --save"
+alias nid="npm install --save-dev"
+alias naf="npm audit fix"
+alias nupdate="sudo npm install -g npm"
+alias serve="npm run serve"
+alias sai="sudo apt install"
+alias mvnci="mvn clean install"
+alias mvnrun="mvn spring-boot:run"
+alias spring='java11 -jar -Dspring.profiles.active=local'
+# alias mocp='mocp -T 30equals'
+alias ipa='ip -s -c -h a'
+alias ipas='ip -s -c -h a | grep -v "inet6" | grep "inet" '
+alias pg='ping google.com'
+alias p18='ping 192.168.3.190'
+# alias cat='ccat'
+alias less='cless'
+alias mb='git for-each-ref --format="%(authorname) %09 %(refname)" | grep origin | grep yondonjamts'
+alias x='startx'
+alias vi='vim'
+alias vic='vim --clean'
+alias ipset='sudo ip link set'
+alias update='yay -Syu && sudo pacman -Syu'
+alias npmu='npm uninstall'
+alias last='last | tac'
+alias fixchro='pacman -U /var/cache/pacman/pkg/chromium-84.0.4147.105-1-x86_64.pkg.tar.zst'
+alias dont='git checkout .'
+alias a='npm run dev'
+alias mkvenv='python -m venv venv'
+alias dnson='cp /etc/resolv.conf.bak /etc/resolv.conf'
+alias sl='sl | lolcat'
+alias feh='feh --scale-down --auto-zoom -d --conversion-timeout 1'
+alias fire='firefox --private-window localhost:3000\/en'
+alias migrate='python manage.py makemigrations && python manage.py migrate --run-syncdb'
+alias run='python main.py'
+alias piper='pip install -r requirements.txt'
+alias mkvenv='python -m venv venv'
+alias dog='dig +short'
+alias vp='vimgolf put'
+alias sim='sudo -E vim'
+alias clbin="curl -F 'clbin=<-' https://clbin.com"
+
+# alias ils='logo-ls'
+# alias ila='logo-ls -A'
+# alias ill='logo-ls -al'
+# # equivalents with Git Status on by Default
+alias ilsg='logo-ls -D'
+alias ilag='logo-ls -AD'
+alias illg='logo-ls -alD'
+
+
+alias ls='logo-ls -D'
+alias l='logo-ls -AD'
+alias ll='logo-ls -alhD'
+alias lls='logo-ls -SlhrD'

@@ -57,9 +57,9 @@ font-3 = FontAwesome:pixelsize=11;1
 font-4 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
 
 ; modules-left = bspwm cpu memory
-modules-left = bspwm memory
+modules-left = bspwm
 modules-center = date
-modules-right = pulseaudio xkeyboard battery-2 temperature
+modules-right = pulseaudio xkeyboard battery-2 temperature memory
 
 tray-position = right
 tray-padding = 2
@@ -95,19 +95,19 @@ label-indicator-on-capslock-underline = #D08770
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = 
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.light-blue}
+label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
-label-occupied = 
+label-occupied = %name%
 label-occupied-padding = 2
 
-label-urgent = 
-label-urgent-foreground = ${colors.alert}
+label-urgent = %name%!
+label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = 
+label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
