@@ -15,11 +15,13 @@ local current_dir='%{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
 local git_branch='$(git_prompt_info)'
 local clock='%{$fg[cyan]%}%D{[%H:%M:%S]}'
 local rvm_ruby='$(ruby_prompt_info)'
+local uptime='$(uptime_formatted)'
 local venv_prompt='$(virtualenv_prompt_info)'
 
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
-PROMPT="╭─${venv_prompt}${user_host}${current_dir}${rvm_ruby}${git_branch}    ${clock} $(battery_pct_prompt)
+# PROMPT="╭─${venv_prompt}${user_host}${current_dir}${git_branch}    ${clock} $(battery_pct_prompt)
+PROMPT="╭─${venv_prompt}${user_host}${current_dir}${rvm_ruby}${git_branch}   ${clock} $(battery_pct_prompt)
 ╰─%B${user_symbol}%b "
 RPROMPT="%B${return_code}%b"
 

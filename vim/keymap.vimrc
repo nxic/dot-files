@@ -26,7 +26,9 @@ nmap <M-j> 10j
 nmap <M-k> 10k
 
 "" nerdtree keybind
-nmap <M-1> :NERDTreeToggle<CR>
+"" execute "set <M-1>=\e¡"
+nmap <silent> <M-1> :NERDTreeToggle
+" nmap <M-1> :NERDTreeToggle<CR>
 
 "" tab changes with Alt+h Alt+l
 nmap <M-h> :bp<CR>
@@ -56,7 +58,7 @@ function! s:BlameToggle() abort
 endfunction
 
 nmap <silent><M-a> :call <SID>BlameToggle()<CR>
-nmap <silent><M-q> :GitMessenger<CR>
+" nmap <silent><M-q> :GitMessenger<CR>
 
 "" find grep with fzf
 nmap <C-e> :Files<CR>
@@ -101,8 +103,7 @@ cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
 cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
+cnoreabbrev Wa wa cnoreabbrev wQ wq
 cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
@@ -116,3 +117,5 @@ cnoreabbrev Qall qall
 nmap <silent> gd <Plug>(coc-definition);
 
 nmap <Leader><space> :noh<CR>
+
+nmap <silent>s :w<CR>

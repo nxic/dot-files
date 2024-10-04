@@ -43,10 +43,13 @@ Plug 'w0rp/ale'
 " Plug 'avelino/vim-bootstrap-updater'
 " Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'ayu-theme/ayu-vim' " or other package manager
+if has('nvim')
+  Plug 'ThePrimeagen/vim-be-good'
+endif
 
 
 autocmd FileType haskell setlocal tabstop=2 shiftwidth=2 expandtab
@@ -69,7 +72,6 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 " Plug 'xolox/vim-session'
 
 "" Snippets
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" Color
@@ -87,6 +89,10 @@ Plug 'hail2u/vim-css3-syntax'
 " Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
+
+" Flutter + DART
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
 
 " javascript
 "" Javascript Bundle
@@ -195,7 +201,7 @@ let g:session_command_aliases = 1
 
 
 " clipboardA
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 
 "*****************************************************************************
@@ -220,6 +226,7 @@ let ayucolor="light"  " for light version of theme
 let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
 
+hi Normal ctermbg=none
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
@@ -297,6 +304,7 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 50
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
+" nnoremap <silent> <M-q> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -529,9 +537,9 @@ if has('autocmd')
 endif
 
 "" Copy/Paste/Cut
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-endif
+" if has('unnamedplus')
+"   set clipboard=unnamed,unnamedplus
+" endif
 
 noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
@@ -551,6 +559,11 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" Custom configs
 "*****************************************************************************
 
+" Typescript
+
+autocmd FileType ts setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType tsx setlocal tabstop=2 shiftwidth=2 expandtab
+
 " Vue
 
 autocmd FileType vue setlocal tabstop=2 shiftwidth=2 expandtab
@@ -563,6 +576,9 @@ autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 " javascript
 let g:javascript_enable_domhtmlcss = 1
+
+" autocmd BufRead,BufNewFile *.jsx setlocal filetype=javascriptreact.javascript.javascript-react.javascript_react
+" autocmd BufRead,BufNewFile *.tsx setlocal filetype=typescriptreact.javascript.typescript.javascriptreact.javascript-react.javascript_react
 
 " vim-javascript
 augroup vimrc-javascript
@@ -639,7 +655,7 @@ else
 endif
 
 " includes
-so $HOME/.vim/keymap.vimrc
+so $HOME/.dot-files/vim/keymap.vimrc
 
 " so $HOME/.vim/dvorak.vimrc
 "

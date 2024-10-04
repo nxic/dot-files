@@ -8,10 +8,12 @@ alias ls='ls -v -h --color=tty'
 alias l='ls -CFh'
 alias ll='ls -lAh'
 alias lls='ls -Slhr'
+alias lsd='ls -d */'
 alias r='reboot'
-alias gpm='git pull origin master'
+alias gpm='git pull origin $(git_main_branch)'
 alias gpl='git pull'
 alias gpo='git push origin'
+alias gpon='git push origin "$1" --no-verify'
 alias gmt='git commit'
 alias gm='git commit -m'
 alias gs='git status'
@@ -19,14 +21,18 @@ alias gst='git stash'
 alias gc='git checkout'
 alias gb='git branch -a'
 alias gt='git tag'
-alias gl="git log --graph --pretty=format:\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --stat"
+alias gtd='git tag -d'
+# alias gl="git log --graph --pretty=format:\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --stat"
+alias gl="git log --graph --pretty=format:\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --stat --date=format:'%Y-%m-%d %H:%M:%S'"
+alias glme="git log --author='yondonjamts' --graph --pretty=format:\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --stat --date=format:'%Y-%m-%d %H:%M:%S'"
+alias gsl="git shortlog -sne"
 alias gf='git fetch -p'
-alias gfpm='git fetch -p && git pull origin master'
+alias gfpm='git fetch -p && git pull origin $(git_main_branch)'
 alias gds='git diff --stat'
-alias gdm='git diff origin/master'
+alias gdm='git diff origin/$(git_main_branch)'
 alias gdst='git diff --staged'
-alias gdms='git diff origin/master --stat'
-alias grhm='git reset --hard origin/master'
+alias gdms='git diff origin/$(git_main_branch) --stat'
+alias grhm='git reset --hard origin/$(git_current_branch)'
 alias gdoc='git diff origin/$(git_current_branch)'
 alias gsta='git stash apply'
 alias ga='git add .'
@@ -38,7 +44,7 @@ alias fan1="i8kctl fan 1 1"
 alias fan2="i8kctl fan 2 2"
 alias sens="sensors"
 alias yt-audio="youtube-dl -f 140"
-alias open="xdg-open"
+# alias open="xdg-open"
 alias envon="mv -v ../.env.local ."
 alias envoff="mv -v .env.local ../"
 alias nsd="npm run start:dev"
@@ -53,7 +59,7 @@ alias mvnrun="mvn spring-boot:run"
 alias spring='java11 -jar -Dspring.profiles.active=local'
 alias mocp='mocp -T 30equals'
 alias ipa='ip -s -c -h a'
-alias ipas='ip -s -c -h a | grep -v "inet6" | grep "inet" '
+# alias ipas='ip -s -c -h a | grep -v "inet6" | grep "inet" '
 alias pg='ping google.com'
 alias p18='ping 192.168.3.190'
 # alias cat='ccat'
@@ -68,11 +74,112 @@ alias npmu='npm uninstall'
 alias last='last | tac'
 alias fixchro='pacman -U /var/cache/pacman/pkg/chromium-84.0.4147.105-1-x86_64.pkg.tar.zst'
 alias dont='git checkout .'
-alias a='npm run dev'
+# alias a='yarn start-mock'
+alias z='yarn build:css'
 alias mkvenv='python -m venv venv'
 alias dnson='cp /etc/resolv.conf.bak /etc/resolv.conf'
-alias sl='sl | lolcat'
+alias sl='ls'
 alias feh='feh --scale-down --auto-zoom -d --conversion-timeout 1'
 alias fire='firefox --private-window localhost:3000\/en'
 alias migrate='python manage.py makemigrations && python manage.py migrate --run-syncdb'
 alias run='python main.py'
+alias gpn='git push origin "$(git_current_branch)" --no-verify'
+alias gp='git push origin "$(git_current_branch)"'
+alias gm='git commit'
+alias gmn='git commit --no-verify -m'
+alias poweroff='halt'
+# alias ipas='ifconfig | grep "inet 192"'
+alias ipas='ifconfig | grep "inet 10"'
+alias vp='vimgolf put'
+# alias vim='nvim'
+alias ovim='v'
+alias so='source'
+alias sshnode='ssh gguser@203.26.189.99'
+alias sshgg='ssh gg@10.0.20.44'
+alias mci='mvn clean install -DskipTests'
+alias k='kubectl'
+alias runjava='java -Djdk.tls.client.protocols="TLSv1,TLSv1.1,TLSv1.2,TLSv1.3" -Djava.security.egd=file:/dev/urandom -jar'
+
+alias minjpg='sips -Z 2000 *.JPG'
+alias minpng='sips -Z 2000 *.PNG'
+alias a='python3 predict.py'
+
+#alias ssh="TERM=xterm-256color $(which ssh)"
+unalias gg
+
+gitr () {
+  for f in $(find . -type d -name .git | awk -F"/.git$" '{print $1}');  do
+    echo
+    echo "................................ (cd $f && git $*) ........................................."
+    echo
+    (cd $f && git $*)
+  done
+}
+
+############ KUBERNETES ############
+
+alias kls='kubectl get pods --sort-by=.metadata.creationTimestamp'
+# alias klog='kubectl logs -f --tail=500'
+
+# kgi() {
+#   kubectl get deployment -o=jsonpath="{range .items[*]}{'\n'}{.metadata.name}{':\t'}{range .spec.template.spec.containers[*]}{.image}{', '}{end}{end}"
+# }
+
+# unalias kex
+
+kex () {
+  kubectl exec -it $1 -- /bin/bash
+}
+
+function klog () {
+    if [ -z "$1" ]; then
+        echo "Usage: dlog <search_term>";
+    else
+        pod_name=$(kubectl get pods --no-headers -o custom-columns=":metadata.name" | grep "$1" | head -n 1);
+	echo $pod_name
+        if [ -n "$pod_name" ]; then
+            kubectl logs -f --tail=500 "$pod_name";
+        else
+            echo "Pod not found for search term: $1";
+        fi;
+    fi
+}
+
+kgi () {
+  kubectl get deployment -o=jsonpath="{range .items[*]}{'\n'}{.metadata.name}{':\t'}{range .spec.template.spec.containers[*]}{.image}{', '}{end}{end}"
+}
+
+############ KUBERNETES ############
+
+
+############ FUN ############
+
+uptime_formatted() {
+  # uptime | awk -F'( |,|:)+' '{print $6,$7",",$8,"hours,",$9,"minutes."}'
+  echo "<$(uptime | awk '{print $3" days"}')>"
+}
+
+############ FUN ############
+
+############ PYTHON VENV RELATED ############
+
+function cd() {
+  builtin cd "$@"
+
+  if [[ -z "$VIRTUAL_ENV" ]] ; then
+    ## If env folder is found then activate the vitualenv
+      if [[ -d ./venv ]] ; then
+        source ./venv/bin/activate
+      fi
+  else
+    ## check the current folder belong to earlier VIRTUAL_ENV folder
+    # if yes then do nothing
+    # else deactivate
+      parentdir="$(dirname "$VIRTUAL_ENV")"
+      if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+        deactivate
+      fi
+  fi
+}
+
+############ PYTHON VENV RELATED ############
