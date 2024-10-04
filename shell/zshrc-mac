@@ -40,8 +40,6 @@ export AILAB_GROUP_ID=3707208
 export AILAB_PROFILE=local
 export AILAB_BUREN_GROUP_ID=54123414
 export AILAB_BUREN_GROUP_ID_NEW=44070181
-export NPM_TOKEN=glpat-72i6esnnSoQm1JWxZUsj
-# export NPM_TOKEN=glpat-XCEj1fjw-FhP_PyWRddU
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
