@@ -104,10 +104,6 @@ alias minjpg='sips -Z 2000 *.JPG'
 alias minpng='sips -Z 2000 *.PNG'
 alias a='python3 predict.py'
 alias ncat='cat -n "$1" | sed "!d"'
-alias xclip='pbcopy'
-
-#alias ssh="TERM=xterm-256color $(which ssh)"
-unalias gg
 
 gitr () {
   for f in $(find . -type d -name .git | awk -F"/.git$" '{print $1}');  do

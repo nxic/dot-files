@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo -e "$(date +'\uf073 %a, %d   \uf017 %H:%M')"
