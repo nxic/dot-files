@@ -11,7 +11,7 @@ else
     local user_symbol=' ₮'
 fi
 
-local current_dir='%{$terminfo[bold]$fg[blue]%}%~ %{$reset_color%}'
+local current_dir='%{$terminfo[bold]$fg[cyan]%}%~ %{$reset_color%}'
 local git_branch='$(git_prompt_info)'
 local clock='%{$fg[cyan]%}%D{[%H:%M:%S]}'
 local rvm_ruby='$(ruby_prompt_info)'

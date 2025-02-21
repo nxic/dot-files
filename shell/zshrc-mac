@@ -5,7 +5,7 @@ ENABLE_CORRECTION="true"
 plugins=(git cp colorize battery grc)
 source $ZSH/oh-my-zsh.sh
 
-source /Users/YG/.dot-files/customs/alias
+source /Users/yondonjamts/.dot-files/customs/alias
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -24,16 +24,16 @@ export PATH="$PATH:/opt/homebrew/bin/python3"
 
 export ANDROID_HOME="~/Library/Android/sdk"
 
-export M2_HOME="/Users/YG/.mvn/apache-maven-3.6.3"
+# export M2_HOME="/Users/yondonjamts/.mvn/apache-maven-3.6.3"
 
 # bun completions
-[ -s "/Users/YG/.bun/_bun" ] && source "/Users/YG/.bun/_bun"
+[ -s "/Users/yondonjamts/.bun/_bun" ] && source "/Users/yondonjamts/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$M2_HOME/bin"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools"
 
 export CI_SERVER_URL=https://gitlab.com
 export AILAB_GROUP_ID=3707208
@@ -44,5 +44,11 @@ export AILAB_BUREN_GROUP_ID_NEW=44070181
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+
+export M2_HOME=$HOME/.mvn
+export PATH=$M2_HOME/bin:$PATH
 
 PATH=~/.console-ninja/.bin:$PATH

@@ -52,7 +52,7 @@ alias nis="npm install --save"
 alias nid="npm install --save-dev"
 alias naf="npm audit fix"
 alias nupdate="sudo npm install -g npm"
-alias serve="npm run serve"
+# alias serve="npm run serve"
 alias sai="sudo apt install"
 alias mvnci="mvn clean install"
 alias mvnrun="mvn spring-boot:run"
@@ -102,9 +102,10 @@ alias runjava='java -Djdk.tls.client.protocols="TLSv1,TLSv1.1,TLSv1.2,TLSv1.3" -
 
 alias minjpg='sips -Z 2000 *.JPG'
 alias minpng='sips -Z 2000 *.PNG'
-alias a='python3 predict.py'
+alias a='cd src/pages/course'
 alias ncat='cat -n "$1" | sed "!d"'
 alias xclip='pbcopy'
+alias pentassh='sudo ssh -i ~/projects/pentascore.pem ubuntu@54.180.222.69'
 
 #alias ssh="TERM=xterm-256color $(which ssh)"
 unalias gg

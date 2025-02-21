@@ -22,7 +22,9 @@ nmap <M-5> :q!<CR>
 "nmap <C-b> :ALEGoToDefinitionInVSplit<CR>
 
 "" pageUp pageDown mapping
+nmap <A-j> 10j
 nmap <M-j> 10j
+nmap <A-k> 10k
 nmap <M-k> 10k
 
 "" nerdtree keybind
